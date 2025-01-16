@@ -1,51 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car-GS: Addressing Reflective and Transparent Surface Challenges in 3D Car
-        Reconstruction</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="soon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car-GS: Addressing Reflective and Transparent Surface Challenges in 3D Car Reconstruction</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet"> -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <!-- <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/comparison.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <title>Image Centering</title>
+    <style>
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Car-GS: Addressing Reflective and Transparent Surface Challenges in 3D Car
-            Reconstruction</h1>
-        <p>Congcong Li<sup>1</sup>, Jin Wang<sup>2</sup>, Xiaomeng Wang<sup>2</sup>, 
-            Xingchen Zhou<sup>2</sup>, Wei Wu<sup>2</sup>,
-            Yuzhi Zhang<sup>2</sup>, Tongyi Cao<sup>2</sup></p>
-        <p><a href="paper.pdf" download>Download PDF</a></p>
-    </header>
 
-    <section id="abstract">
-        <h2>Abstract</h2>
-        <p>3D car modeling is crucial for applications in autonomous driving systems, 
-            virtual and augmented reality, and gaming. However, due to the distinctive properties of cars, 
-            such as highly reflective and transparent surface materials, existing methods often face challenges 
-            in accurately reconstructing 3D models. To address these limitations, we propose Car-GS, 
-            a novel approach designed to mitigate the effects of specular highlights and the coupling of 
-            RGB and geometry in 3D geometric and shading reconstruction (3DGS). Our method incorporates 
-            three key innovations: First, we introduce view-dependent Gaussian primitives to effectively model surface 
-            reflections. Second, we identify the limitations of using a shared opacity parameter for both image rendering 
-            and geometric attributes when modeling transparent objects. To overcome this, we assign a learnable geometry-specific 
-            opacity to each 2D Gaussian primitive, dedicated solely to rendering depth and normals. Third, we observe that 
-            reconstruction errors are most prominent when the camera view is nearly orthogonal to glass surfaces. To address this issue, we develop a quality-aware supervision module that adaptively leverages normal priors from a pre-trained large-scale normal model. Experimental results demonstrate that Car-GS achieves precise reconstruction of car surfaces and significantly outperforms prior methods.</p>
-    </section>
+<!-- authors -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Car-GS: Addressing Reflective and Transparent Surface Challenges in 3D Car Reconstruction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Congcong Li</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Jin Wang</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Xiaomeng Wang</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Xingchen Zhou</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Wei Wu</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="">Yuzhi Zhang</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Tongyi Cao</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
+          </div>
 
-    <section id="visualization">
-        <h2>Results</h2>
-        <img src="result1.gif" alt="Result 1">
-        <img src="result2.gif" alt="Result 2">
-    </section>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>DeepRoute.AI</span>&nbsp;&nbsp;
+            <br>
+            <span class="email-link">
+              <!-- <a href="mailto:maikeyeweicai@gmail.com">maikeyeweicai@gmail.com</a> -->
+              &nbsp;&nbsp;
+              <!-- <a href="mailto:tonghe90@gmail.com">tonghe90@gmail.com</a> -->
+            </span>
+          </div>
 
-    <section id="resources">
-        <h2>Resources</h2>
-        <p><a href="https://github.com/username/repo" target="_blank">GitHub Repository</a></p>
-        <p><a href="model.zip" download>Download Model</a></p>
-    </section>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="paper/pgsr.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2406.06521"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/zju3dv/PGSR"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
 
-    <footer>
-        <p>© 2025 Your Name</p>
-    </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- teaser.png -->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" height="100%" src="./static/images/teaser.png" alt="ND-SDF teaser."/>
+      <p>
+        We present <b>ND-SDF</b>, a framework for high-fidelity 3D indoor surface reconstruction from multi-views. Shown above is an extracted mesh from ScanNet++.
+      </p>
+    </div>
+  </div>
+</section> -->
+
+<!-- Video -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="text-align: center;">Videos</h2>
+    <video controls width="100%" height="100%" src="./static/videos/final.mp4" type="video/mp4" autoplay muted loop playsinline></video> 
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recently, 3D Gaussian Splatting (3DGS) has attracted widespread attention due to its high-quality rendering, and ultra-fast training and rendering speed. However, due to the unstructured and irregular nature of Gaussian point clouds, it is difficult to guarantee geometric reconstruction accuracy and multi-view consistency simply by relying on image reconstruction loss. Although many studies on surface reconstruction based on 3DGS have emerged recently, the quality of their meshes is generally unsatisfactory. To address this problem, we propose a fast planar-based Gaussian splatting reconstruction representation (PGSR) to achieve high-fidelity surface reconstruction while ensuring high-quality rendering. Specifically, we first introduce an unbiased depth rendering method, which directly renders the distance from the camera origin to the Gaussian plane and the corresponding normal map based on the Gaussian distribution of the point cloud, and divides the two to obtain the unbiased depth. We then introduce single-view geometric, multi-view photometric, and geometric regularization to preserve global geometric accuracy. We also propose a camera exposure compensation model to cope with scenes with large illumination variations. Experiments on indoor and outdoor scenes show that our method achieves fast training and rendering while maintaining high-fidelity rendering and geometric reconstruction, outperforming 3DGS-based and NeRF-based methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/system.png"
+               class="framework-image"
+               alt="PGSR overview."/>
+          <p>
+              Compared to 3DGS, we achieve global consistency in geometry reconstruction while
+              maintaining similar rendering quality. Initially, we improve
+              the modeling of scene geometry attributes by compressing
+              3D Gaussians into a 2D flat plane representation, which
+              is used to generate plane distance and normal maps, and
+              subsequently converted into unbiased depth maps. We then
+              introduce single-view geometric, multi-view photometric, and
+              geometric consistency loss to ensure global geometry consistency. Additionally, the exposure compensation model further
+              improves reconstruction accuracy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+<!-- Comparisons -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="text-align: center;">Comparisons</h2>
+      <!-- DTU -->
+      <div class="content">
+        <h2 class="title is-4">DTU</h2>
+        <div class="button-container" id="btn1">
+          <button onclick="changeImages(event, 'cmp1','./static/images/cmp/2dgs/37_2dgs.png', './static/images/cmp/ours/37_ours.png')" class="cmp-button cmp-btn-checked">scan_37</button>
+          <button onclick="changeImages(event, 'cmp1','./static/images/cmp/2dgs/63_2dgs.png', './static/images/cmp/ours/63_ours.png')" class="cmp-button">scan_63</button>
+          <button onclick="changeImages(event, 'cmp1','./static/images/cmp/2dgs/65_2dgs.png', './static/images/cmp/ours/65_ours.png')" class="cmp-button">scan_65</button>
+          <button onclick="changeImages(event, 'cmp1','./static/images/cmp/2dgs/110_2dgs.png', './static/images/cmp/ours/110_ours.png')" class="cmp-button">scan_110</button>
+          <button onclick="changeImages(event, 'cmp1','./static/images/cmp/2dgs/114_2dgs.png', './static/images/cmp/ours/114_ours.png')" class="cmp-button">scan_114</button>
+        </div>
+        <div class="cmp-container" id="cmp1">
+            <div class="bottom">
+                <img src="./static/images/cmp/ours/37_ours.png"/>
+            </div>
+            <div class="top">
+                <img src="./static/images/cmp/2dgs/37_2dgs.png"/>
+            </div>
+            <div class="cmp-slider"></div>
+        </div>
+      </div>
+        
+      <br/>
+      <div class="image-container">
+        <h2 class="title is-4">More Results</h2>
+            <img style="width: 90%;" src="./static/images/all_dtu.png"/>
+            </object>
+      </div>
+
+      <br/>
+      <div class="image-container">
+            <img style="width: 80%;" src="./static/images/dtu_table.png"/>
+            </object>
+      </div>
+
+      <!-- Mip360 & TnT -->
+      <br/>
+      <div class="content">
+        <h2 class="title is-4">Mip360 & TnT</h2>
+        <div class="button-container" id="btn3">
+          <button onclick="changeImages(event, 'cmp2','./static/images/cmp/2dgs/bonsai_2dgs.png', './static/images/cmp/ours/bonsai_ours.png')" class="cmp-button cmp-btn-checked">Bonsai</button>
+          <button onclick="changeImages(event, 'cmp2','./static/images/cmp/2dgs/Caterpillar_2dgs.png', './static/images/cmp/ours/Caterpillar_ours.png')" class="cmp-button">Caterpillar</button>
+          <button onclick="changeImages(event, 'cmp2','./static/images/cmp/2dgs/counter_2dgs.png', './static/images/cmp/ours/counter_ours.png')" class="cmp-button">Counter</button>
+        </div>
+        <div class="cmp-container" id="cmp2">
+            <div class="bottom">
+                <img src="./static/images/cmp/ours/bonsai_ours.png"/>
+            </div>
+            <div class="top">
+                <img src="./static/images/cmp/2dgs/bonsai_2dgs.png"/>
+            </div>
+            <div class="cmp-slider"></div>
+        </div>
+      </div>
+    
+      <br/>
+      <div class="image-container">
+        <h2 class="title is-4">More Results</h2>
+        <img style="width: 80%;" src="static/images/more_results.png"/>
+            </object>
+      </div>
+
+      <br/>
+      <div class="image-container">
+            <img style="width: 60%;" src="./static/images/tnt_table.png"/>
+            </object>
+      </div>
+
+    </div>
+  <script src="./static/js/comparison.js"></script>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @article{chen2024pgsr,
+        title={PGSR: Planar-based Gaussian Splatting for Efficient and High-Fidelity Surface Reconstruction},
+        author={Danpeng Chen and Hai Li and Weicai Ye and Yifan Wang and Weijian Xie and Shangjin Zhai and Nan Wang and Haomin Liu and Hujun Bao and Guofeng Zhang},
+          booktitle={arxiv preprint arxiv:2406.06521}, 
+          year={2024}
+      }
+      ```</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We thank <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a> for their amazing template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
