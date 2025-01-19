@@ -121,31 +121,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            3D car modeling is crucial for applications in au-
-            tonomous driving systems, virtual and augmented reality,
-            and gaming. However, due to the distinctive properties of
-            cars, such as highly reflective and transparent surface ma-
-            terials, existing methods often face challenges in accurately
+            3D car modeling is crucial for applications in autonomous driving systems, virtual and augmented reality,
+            and gaming. However, due to the distinctive properties of 
+            cars, such as highly reflective and transparent surface materials, existing methods often face challenges in accurately
             reconstructing 3D models. To address these limitations,
             we propose Car-GS, a novel approach designed to mitigate
             the effects of specular highlights and the coupling of RGB
-            and geometry in 3D geometric and shading reconstruc-
-            tion (3DGS). Our method incorporates three key innova-
-            tions: First, we introduce view-dependent Gaussian prim-
+            and geometry in 3D geometric and shading reconstruction (3DGS). Our method incorporates three key innovations: First, we introduce view-dependent Gaussian prim-
             itives to effectively model surface reflections. Second, we
-            identify the limitations of using a shared opacity parame-
-            ter for both image rendering and geometric attributes when
+            identify the limitations of using a shared opacity parameter for both image rendering and geometric attributes when
             modeling transparent objects. To overcome this, we assign
-            a learnable geometry-specific opacity to each 2D Gaus-
-            sian primitive, dedicated solely to rendering depth and nor-
+            a learnable geometry-specific opacity to each 2D Gaussian primitive, dedicated solely to rendering depth and nor-
             mals. Third, we observe that reconstruction errors are most
             prominent when the camera view is nearly orthogonal to
-            glass surfaces. To address this issue, we develop a quality-
-            aware supervision module that adaptively leverages normal
-            priors from a pre-trained large-scale normal model. Exper-
-            imental results demonstrate that Car-GS achieves precise
-            reconstruction of car surfaces and significantly outperforms
-            prior methods.
+            glass surfaces. To address this issue, we develop a quality-aware supervision module that adaptively leverages normal
+            priors from a pre-trained large-scale normal model. Experimental results demonstrate that Car-GS achieves precise
+            reconstruction of car surfaces and significantly outperforms prior methods.
           </p>
         </div>
       </div>
