@@ -127,12 +127,10 @@
             reconstructing 3D models. To address these limitations,
             we propose Car-GS, a novel approach designed to mitigate
             the effects of specular highlights and the coupling of RGB
-            and geometry in 3D geometric and shading reconstruction (3DGS). Our method incorporates three key innovations: First, we introduce view-dependent Gaussian prim-
-            itives to effectively model surface reflections. Second, we
+            and geometry in 3D geometric and shading reconstruction (3DGS). Our method incorporates three key innovations: First, we introduce view-dependent Gaussian primitives to effectively model surface reflections. Second, we
             identify the limitations of using a shared opacity parameter for both image rendering and geometric attributes when
             modeling transparent objects. To overcome this, we assign
-            a learnable geometry-specific opacity to each 2D Gaussian primitive, dedicated solely to rendering depth and nor-
-            mals. Third, we observe that reconstruction errors are most
+            a learnable geometry-specific opacity to each 2D Gaussian primitive, dedicated solely to rendering depth and normals. Third, we observe that reconstruction errors are most
             prominent when the camera view is nearly orthogonal to
             glass surfaces. To address this issue, we develop a quality-aware supervision module that adaptively leverages normal
             priors from a pre-trained large-scale normal model. Experimental results demonstrate that Car-GS achieves precise
