@@ -3,53 +3,34 @@ const cmpContainers = document.querySelectorAll('.cmp-container');
 cmpContainers.forEach(container => {
     const slider = container.querySelector('.cmp-slider');
     let active = false // 当mouse移动到container上时，active为true此时move slider
-    container.addEventListener('mouseenter', function(){
+    container.addEventListener('mouseenter', function () {
         active = true;
         slider.classList.add('sliding');
 
     });
-    container.addEventListener('mouseleave', function(){
+    container.addEventListener('mouseleave', function () {
         active = false;
         slider.classList.remove('sliding');
 
     });
-    container.addEventListener('mousemove', function(e){
-        if(active){
+    container.addEventListener('mousemove', function (e) {
+        if (active) {
             // 计算相对container的x坐标
-            x = e.clientX - container.getBoundingClientRect().left;
+            x = e.clientX - container.getBoundingClientRect().left - 150;
             move(x);
         }
     });
-    
-    function move(x){
+
+    function move(x) {
         x = Math.max(0, Math.min(x, container.offsetWidth)); // 限制x在container范围内,offsetWidth是元素的宽度不包括margin。
         container.querySelector('.top').style.width = x + 'px'; // slider图像
-        slider.style.left = x - 15 + 'px'; // slider位置
+        slider.style.left = x - 15 + 150 + 'px'; // slider位置
     }
 });
-// let slider = document.querySelector('.cmp-slider');
-// let container = document.querySelector('.cmp-container');
-
-// 绑定按钮点击事件以切换图片
-// function changeImages(cmpId, imgTopSrc, imgBottomSrc) {
-//     const cmpContainer = document.getElementById(cmpId);
-//     if (cmpContainer) {
-//         const topImg = cmpContainer.querySelector('.top img');
-//         const bottomImg = cmpContainer.querySelector('.bottom img');
-        
-//         if (topImg) {
-//             topImg.src = imgTopSrc;
-//         }
-        
-//         if (bottomImg) {
-//             bottomImg.src = imgBottomSrc;
-//         }
-//     }
-// }
 
 
 // 预加载所有图片
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const images = [
         './static/images/cmp/2dgs/37_2dgs.png', './static/images/cmp/ours/37_ours.png',
         './static/images/cmp/2dgs/63_2dgs.png', './static/images/cmp/ours/63_ours.png',
@@ -60,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         './static/images/cmp/2dgs/Caterpillar_2dgs.png', './static/images/cmp/ours/Caterpillar_ours.png',
         './static/images/cmp/2dgs/counter_2dgs.png', './static/images/cmp/ours/counter_ours.png'
     ];
-    
+
 
     images.forEach(src => preloadImage(src));
 });
@@ -78,7 +59,7 @@ function preloadImage(src) {
 function changeImages(event, cmpId, imgSrc1, imgSrc2) {
     const cmpContainer = document.getElementById(cmpId);
     if (!cmpContainer) return;
-    
+
     const topImg = cmpContainer.querySelector('.top img');
     const bottomImg = cmpContainer.querySelector('.bottom img');
     if (!topImg || !bottomImg) return;
@@ -86,7 +67,7 @@ function changeImages(event, cmpId, imgSrc1, imgSrc2) {
     bottomImg.src = imgSrc2;
     // 获取当前按钮的父元素容器
     const buttonContainer = event.target.parentElement;
-    
+
     // 移除该容器内所有按钮的 .cmp-btn-checked 类
     const buttons = buttonContainer.querySelectorAll('.cmp-button');
     buttons.forEach(button => {
